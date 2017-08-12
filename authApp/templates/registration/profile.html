@@ -1,0 +1,34 @@
+{% extends 'authApp/base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a href="#" alt="..." ></a>
+      <div class="caption">
+        <h3> </h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-8">
+  {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+  {% endif %}
+
+        <a href="#" class="btn btn-primary">View All</a>
+        <form action="" method="post" style="display:inline">
+        {% csrf_token %}
+        <button type="submit" class="btn">Add new Song</button>
+        </form>
+
+    <div class="wrapper">
+
+  </div>
+  </div>
+</div>
+
+</div>
+{% endblock %}
