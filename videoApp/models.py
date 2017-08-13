@@ -9,10 +9,11 @@ class Album(models.Model):
     album_description = models.CharField(max_length=255)
     album_logo = models.FileField(upload_to='album/%Y/%m/%d')
 
-    def __unicode__(self):
-        return unicode(self.album_title)
 
     def __str__(self):
+        return self.album_title
+
+    def __unicode__(self):
         return self.album_title
 
 
@@ -23,8 +24,8 @@ class Video(models.Model):
     timestamp = models.DateTimeField(auto_now_add=False, auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True, auto_now=False)
 
-    def __unicode__(self):
-        return unicode(self.video_title)
-
     def __str__(self):
         return self.video_title+' '+self.album.album_title
+
+    def __unicode__(self):
+        return unicode(self.video_title)

@@ -13,7 +13,15 @@ class UserProfileView(LoginRequiredMixin, View):
     template_name = 'registration/profile.html'
 
     def get(self, request):
-        user_obj = UserProfile.object.get(request.user)
-        print user_obj
-        return HttpResponse('eiei')
+
+        user_obj = UserProfile.objects.get(owner = request.user)
+        group = Group.objects.get(name = user_obj.group)
+        album_obj = Album.objects.get(group = group)
+        context = {
+            'user_detail' : user_obj,
+            'album': album_obj
+        }
+
+        return render(request,self.template_name , context)
+
 
