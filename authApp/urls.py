@@ -5,5 +5,5 @@ from . import views
 
 urlpatterns = [
     url(r'',  include('django.contrib.auth.urls')),
-    url(r'^profile/', views.UserProfileView.as_view(), name='profile')
+    url(r'^profile/$', views.UserProfileView.as_view(), name='profile')
 ]

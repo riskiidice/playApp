@@ -12,8 +12,8 @@ class UserProfile(models.Model):
     district = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     province = models.CharField(max_length=100)
-    parent_number = models.DecimalField(max_digits=10, decimal_places=10)
-    student_number = models.DecimalField(max_digits=10, decimal_places=10)
+    parent_number = models.CharField(max_length=10)
+    student_number = models.CharField(max_length=10)
     old_school = models.CharField(max_length=255)
     grade = models.CharField(max_length=10)
 

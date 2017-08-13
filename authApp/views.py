@@ -10,9 +10,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class UserProfileView(LoginRequiredMixin, View):
     model = UserProfile
-    context_object_name = 'all_albums'
     template_name = 'registration/profile.html'
 
-    def get_queryset(self):
+    def get(self, request):
+        # userProfile = UserProfile.object.filter
+        return render(request , self.template_name, { 'userdetail': userProfile})
 
-        return UserProfile.objects.get(self.pk)
